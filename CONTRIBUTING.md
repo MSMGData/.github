@@ -16,9 +16,7 @@ We use Jira to track work at [https://jira1-eu1.moneysupermarketgroup.com/projec
 The PR title and each commit message in the PR should begin with a Jira ticket reference.
 
 Often someone may want to make a small quality-of-life improvement that isn't directly related to a currently active
-Jira ticket. Each week a generic Jira ticket will be created as a "catch-all" for such changes so that the requirement
-to refer to a Jira ticket can be satisfied (the first such ticket is
-[https://jira1-eu1.moneysupermarketgroup.com/browse/DATA-600](https://jira1-eu1.moneysupermarketgroup.com/browse/DATA-600)).
+Jira ticket. In such cases simply refer to non-existent ticket **DATA-0**.
 
 Search at [https://jira1-eu1.moneysupermarketgroup.com/browse/DATA-118?jql=project%20%3D%20DATA%20AND%20text%20~%20generic](https://jira1-eu1.moneysupermarketgroup.com/browse/DATA-118?jql=project%20%3D%20DATA%20AND%20text%20~%20generic) to find all "catch-all" tickets.
 
