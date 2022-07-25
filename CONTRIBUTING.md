@@ -18,8 +18,6 @@ The PR title and each commit message in the PR should begin with a Jira ticket r
 Often someone may want to make a small quality-of-life improvement that isn't directly related to a currently active
 Jira ticket. In such cases simply refer to non-existent ticket **DATA-0**.
 
-Search at [https://jira1-eu1.moneysupermarketgroup.com/browse/DATA-118?jql=project%20%3D%20DATA%20AND%20text%20~%20generic](https://jira1-eu1.moneysupermarketgroup.com/browse/DATA-118?jql=project%20%3D%20DATA%20AND%20text%20~%20generic) to find all "catch-all" tickets.
-
 ### Tests
 
 Functionality being introduced by a PR should be demonstrable via a test, be that a unit test or an integration test. In all cases such tests
