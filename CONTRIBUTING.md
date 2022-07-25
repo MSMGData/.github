@@ -16,7 +16,8 @@ We use Jira to track work at [https://jira1-eu1.moneysupermarketgroup.com/projec
 The PR title and each commit message in the PR should begin with a Jira ticket reference.
 
 Often someone may want to make a small quality-of-life improvement that isn't directly related to a currently active
-Jira ticket. In such cases simply refer to non-existent ticket **DATA-0**.
+Jira ticket. In such cases simply refer to non-existent ticket **DATA-0**. Please use this frugally, there shouldn't be too many
+changes that aren't covered by a jira ticket.
 
 ### Tests
 
