@@ -1,0 +1,44 @@
+# yamllint disable rule:line-length
+---
+name: CI
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check-commit-message:
+    runs-on: [self-hosted, ubuntu, prod]
+    steps:
+      - name: Check that a Jira ticket is referred to
+        uses: MSMGData/actions/git-commit-pr-message-checker@main
+        with:
+          githubAccessToken: ${{ secrets.GITHUB_TOKEN }}
+
+  tf-fmt:
+    runs-on: [self-hosted, ubuntu, prod]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: terraform-fmt
+        uses: dflook/terraform-fmt@v1.24.0
+        with:
+          path: tf
+      - name: terraform-validate
+        uses: dflook/terraform-validate@v1.24.0
+        with:
+          path: tf
+
+
+  super-lint:
+    name: Lint Code Base
+    runs-on: [self-hosted, ubuntu, dataplatform]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run Super-Linter
+        uses: github/super-linter/slim@v4
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_ALL_CODEBASE: false
