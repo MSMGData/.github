@@ -88,11 +88,20 @@ You can either `enable auto-merge (squash)` or manually squash and merge.
 ## PR reviews
 
 We use GitHub's [CODEOWNERS](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)
-feature to define the people that are allowed to approve PRs in different situations.
+feature to define the teams that are allowed to approve PRs in different situations. The teams are managed at
+[https://github.com/orgs/MSMGData/teams](https://github.com/orgs/MSMGData/teams).
 
-* The Data Engineering team (i.e. those in Chris Harte's team) have to approve any PR that affects files under `./dataplatform`
-* The Data Systems team (i.e. those in Charlotte Doherty's team) have to approve any PR that affects files under `./commondatamodel`
-* Any change that affects files that can affect the entire population (e.g. `./base_image`, `./.github`, the file you're reading right now)
+```mermaid
+flowchart TB
+   orgadmins(orgadmins\nmaintainers: existing members)
+   AllMSMGData(All MSMGData) --- gcpdatasystems(gcpdatasolutions\nmaintainer: Charlotte)
+   AllMSMGData --- gcpdataeng(gcpdataeng\nmaintainer: ChrisH)
+   AllMSMGData --- datascience(datascience\nmaintainer: Betty)
+```
+
+These groups will be granted permission to approve PRs in various repositories. There is no documentation here
+regarding which teams have CODEOWNER permissions in which repositories as any such documentation will eventually
+be out-of-date. Consult the .CODEOWNERS file in each repository to understand permissions granted to each team.
 
 ## Pre requisites
 
